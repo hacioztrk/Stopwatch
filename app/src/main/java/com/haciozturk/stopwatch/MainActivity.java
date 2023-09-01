@@ -13,8 +13,6 @@ public class MainActivity extends AppCompatActivity {
 
     Chronometer chronometer;
     Button btnStart, btnReset, btnPause;
-    ImageView imageView;
-    
     long pauseoff=0;
 
     @Override
@@ -27,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         btnStart = findViewById(R.id.btnStart);
         btnPause = findViewById(R.id.btnPause);
         btnReset = findViewById(R.id.btnReset);
-        imageView = findViewById(R.id.imageView);
 
 
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -37,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 chronometer.start();
                 btnStart.setVisibility(View.INVISIBLE);
                 btnPause.setVisibility(View.VISIBLE);
-                imageView.setImageDrawable(getDrawable(R.drawable.pause));
-
             }
         });
         btnPause.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 chronometer.stop();
                 btnPause.setVisibility(View.INVISIBLE);
                 btnStart.setVisibility(View.VISIBLE);
-                imageView.setImageDrawable(getDrawable(R.drawable.start));
             }
         });
 
@@ -59,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 chronometer.stop();
                 btnStart.setVisibility(View.VISIBLE);
                 btnPause.setVisibility(View.INVISIBLE);
-                imageView.setImageDrawable(getDrawable(R.drawable.start));
 
                 pauseoff =0;
             }
